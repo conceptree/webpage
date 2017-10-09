@@ -3,6 +3,7 @@
     "fontawesome": "^4.7.2",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "material-design-icons": "^3.0.1"
+    "material-design-icons": "^3.0.1",
+    "requirejs": "^2.3.5"
   }
 }
