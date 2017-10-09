@@ -1,3 +1,12 @@
+
+$blackColor : #000;
+$whiteColor : #fff;
+
+@keyframes example {
+    from {margin-top: -65px;}
+    to {margin-top: 0px;}
+}
+
 .main-wrapper{
 
     .video-bg{
@@ -6,7 +15,81 @@
         left: 0px;
         width: 100%;
         height: 100vh;
-        background-color: #ccc; 
+        overflow: hidden;
+        background-color: $blackColor;
+
+        video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            transition: 1s opacity;
+            opacity: 0.5;
+        }
+
+        .video-pattern{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100vh;
+            background: url(../imgs/pattern.png);
+            background-repeat: repeat;
+        }
+    }
+
+    .menu-nav{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 35px;
+        background: rgba($color: $blackColor, $alpha: 0.5);
+
+        i{
+            color:$whiteColor;
+        }
+
+        .menu-button, .menu-user{
+            text-align: center;
+            line-height: 35px;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+
+        .menu-user{
+            float: right;
+        }
+
+        nav{
+            margin-left: 10px;
+            width: 350px;
+            height: 35px;
+            margin-top: -65px;
+            animation-name: example;
+            animation-duration: 4s;
+
+            a{
+                cursor: pointer;
+                text-decoration: none;
+                outline: none;
+                border: none;
+                color:$whiteColor;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: center;                
+            }
+        }
+    }
+
+    section{
+        min-height: 100vh;
+        min-width: 100%;
     }
 
 }
