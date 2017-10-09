@@ -7,6 +7,13 @@ $whiteColor : #fff;
     to {margin-top: 0px;}
 }
 
+body,html{
+    padding:0px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .main-wrapper{
 
     .video-bg{
@@ -54,15 +61,16 @@ $whiteColor : #fff;
             color:$whiteColor;
         }
 
-        .menu-button, .menu-user{
+        .menu-button, .menu-user, .menu-github{
             text-align: center;
             line-height: 35px;
             width: 35px;
             height: 35px;
             cursor: pointer;
+            font-size: 1em;
         }
 
-        .menu-user{
+        .menu-user, .menu-github{
             float: right;
         }
 
