@@ -14,9 +14,7 @@ function webpageJS() {
 
     /* Init Callbacks */
     function initCallbacks(){
-
         menuButton.addEventListener('click', toggleMenu);
-
     }
 
     initCallbacks();

@@ -1,20 +1,43 @@
-@keyframes example {
+@keyframes fromLeft {
   from {
-    margin-top: -65px; }
+    margin-left: -50%; }
   to {
-    margin-top: 0px; } }
+    margin-left: 0; } }
 
-body, html {
-  padding: 0px;
-  margin: 0px;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif; }
+@keyframes fromRight {
+  from {
+    margin-right: -50%; }
+  to {
+    margin-right: 0; } }
 
 * {
   padding: 0px;
   margin: 0px;
   border: none;
-  outline: none; }
+  outline: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+html {
+  padding: 0px;
+  margin: 0px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F0F0EE;
+  overflow: hidden; }
+
+body {
+  padding: 0px;
+  margin: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+  height: 100vh; }
 
 .main-wrapper {
   padding: 0px; }
@@ -122,12 +145,7 @@ body, html {
     .main-wrapper .menu-nav nav {
       width: 350px;
       height: 35px;
-      margin-left: -350px;
-      -webkit-transition: all 1s ease;
-      -moz-transition: all 1s ease;
-      -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-      transition: all 1s ease; }
+      margin-left: -350px; }
       .main-wrapper .menu-nav nav a {
         cursor: pointer;
         text-decoration: none;
@@ -153,7 +171,10 @@ body, html {
     margin-left: -125px;
     margin-top: -50px;
     background: url("../imgs/logo.png") no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    -webkit-transform: translateZ(-1px) scale(2);
+    transform: translateZ(-1px) scale(2);
+    cursor: pointer; }
   .main-wrapper .window {
     position: absolute;
     top: 0px;
@@ -163,9 +184,69 @@ body, html {
     padding: 20px;
     background: #ccc;
     visibility: hidden; }
+  .main-wrapper .about {
+    margin-top: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+  .main-wrapper .projects {
+    overflow: hidden; }
   .main-wrapper section {
     min-height: 100vh;
     min-width: 100%;
     padding: 0px; }
-    .main-wrapper section:nth-child(odd) {
-      background: #ccc; }
+    .main-wrapper section .side-by-side-wrapper {
+      overflow: hidden;
+      height: 100vh;
+      width: 100%; }
+      .main-wrapper section .side-by-side-wrapper .side-text {
+        padding: 50px;
+        font-size: 0.8em;
+        overflow: auto;
+        height: auto;
+        width: 100%;
+        text-align: center; }
+      .main-wrapper section .side-by-side-wrapper .side-logos {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 50px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        justify-content: center;
+        align-content: center;
+        list-style: none; }
+        .main-wrapper section .side-by-side-wrapper .side-logos li {
+          align-content: center;
+          text-align: center;
+          flex: 1;
+          cursor: pointer; }
+          .main-wrapper section .side-by-side-wrapper .side-logos li i {
+            text-align: center;
+            font-size: 2em;
+            color: #000; }
+    .main-wrapper section .side-image {
+      width: 100%;
+      height: 100%;
+      background: url("https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa8a2a.jpg") no-repeat;
+      background-size: cover;
+      background-position: center;
+      -webkit-transform: translateZ(-1px) scale(2);
+      transform: translateZ(-1px) scale(2); }
+    .main-wrapper section .projects-list {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      list-style: none; }
+      .main-wrapper section .projects-list .projects-element {
+        flex: 30%;
+        height: 30%;
+        background: #ccc;
+        overflow: hidden;
+        cursor: pointer; }
+        .main-wrapper section .projects-list .projects-element img {
+          height: 110%; }
+        .main-wrapper section .projects-list .projects-element:hover {
+          opacity: 0.2; }
