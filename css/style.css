@@ -26,21 +26,21 @@ html {
   margin: 0px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  background-color: #F0F0EE;
-  overflow: hidden; }
+  background-color: #F0F0EE; }
 
 body {
   padding: 0px;
   margin: 0px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  -webkit-perspective: 1px;
-  perspective: 1px;
   height: 100vh; }
 
 .main-wrapper {
-  padding: 0px; }
+  padding: 0px;
+  /*CUSTOM*/ }
+  .main-wrapper h1 {
+    padding: 10px;
+    width: 100%;
+    font-size: 5em;
+    opacity: .5; }
   .main-wrapper .video-bg {
     position: absolute;
     top: 0px;
@@ -66,7 +66,7 @@ body {
       left: 0px;
       width: 100%;
       height: 100vh;
-      background: url(../imgs/pattern.png);
+      background: url(../assets/pattern.png);
       background-repeat: repeat; }
   .main-wrapper .menu-nav {
     position: fixed;
@@ -170,7 +170,7 @@ body {
     height: 95px;
     margin-left: -125px;
     margin-top: -50px;
-    background: url("../imgs/logo.png") no-repeat;
+    background: url("../assets/logo.png") no-repeat;
     background-size: cover;
     -webkit-transform: translateZ(-1px) scale(2);
     transform: translateZ(-1px) scale(2);
@@ -184,12 +184,6 @@ body {
     padding: 20px;
     background: #ccc;
     visibility: hidden; }
-  .main-wrapper .about {
-    margin-top: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d; }
-  .main-wrapper .projects {
-    overflow: hidden; }
   .main-wrapper section {
     min-height: 100vh;
     min-width: 100%;
@@ -198,55 +192,83 @@ body {
       overflow: hidden;
       height: 100vh;
       width: 100%; }
-      .main-wrapper section .side-by-side-wrapper .side-text {
-        padding: 50px;
+      .main-wrapper section .side-by-side-wrapper .side-image {
+        width: 100%;
+        height: 100%;
+        background: url("https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa8a2a.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        -webkit-transform: translateZ(-1px) scale(2);
+        transform: translateZ(-1px) scale(2); }
+  .main-wrapper .about {
+    margin-top: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
+  .main-wrapper .projects {
+    overflow: hidden; }
+  .main-wrapper .projects-content .side-text {
+    padding: 20px;
+    font-size: 0.8em;
+    overflow: auto;
+    height: auto;
+    width: 100%;
+    text-align: left; }
+  .main-wrapper .projects-content .side-logos {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content: center;
+    align-content: center;
+    list-style: none; }
+    .main-wrapper .projects-content .side-logos li {
+      align-content: center;
+      text-align: center;
+      flex: 1;
+      cursor: pointer; }
+      .main-wrapper .projects-content .side-logos li i {
+        text-align: center;
+        font-size: 2em;
+        color: #000; }
+  .main-wrapper .projects-list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    list-style: none; }
+    .main-wrapper .projects-list .projects-element {
+      flex: 30%;
+      height: 30%;
+      background: #ccc;
+      overflow: hidden;
+      cursor: pointer; }
+      .main-wrapper .projects-list .projects-element img {
+        height: 110%; }
+      .main-wrapper .projects-list .projects-element:hover {
+        opacity: 0.2; }
+  .main-wrapper .contacts .contact-img {
+    width: 100%;
+    height: 100%;
+    background: url("https://static.pexels.com/photos/362/marketing-man-person-communication.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .main-wrapper .contacts .contacts-content {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .main-wrapper .contacts .contacts-content form {
+      width: 100%;
+      padding: 20px; }
+      .main-wrapper .contacts .contacts-content form input, .main-wrapper .contacts .contacts-content form textarea {
+        padding: 10px;
+        width: 100%;
         font-size: 0.8em;
-        overflow: auto;
-        height: auto;
-        width: 100%;
-        text-align: center; }
-      .main-wrapper section .side-by-side-wrapper .side-logos {
-        display: flex;
-        width: 100%;
-        height: auto;
-        padding: 50px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        justify-content: center;
-        align-content: center;
-        list-style: none; }
-        .main-wrapper section .side-by-side-wrapper .side-logos li {
-          align-content: center;
-          text-align: center;
-          flex: 1;
-          cursor: pointer; }
-          .main-wrapper section .side-by-side-wrapper .side-logos li i {
-            text-align: center;
-            font-size: 2em;
-            color: #000; }
-    .main-wrapper section .side-image {
-      width: 100%;
-      height: 100%;
-      background: url("https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa8a2a.jpg") no-repeat;
-      background-size: cover;
-      background-position: center;
-      -webkit-transform: translateZ(-1px) scale(2);
-      transform: translateZ(-1px) scale(2); }
-    .main-wrapper section .projects-list {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      list-style: none; }
-      .main-wrapper section .projects-list .projects-element {
-        flex: 30%;
-        height: 30%;
-        background: #ccc;
-        overflow: hidden;
-        cursor: pointer; }
-        .main-wrapper section .projects-list .projects-element img {
-          height: 110%; }
-        .main-wrapper section .projects-list .projects-element:hover {
-          opacity: 0.2; }
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px; }

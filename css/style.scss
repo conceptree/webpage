@@ -33,23 +33,30 @@ html{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     background-color: $bgMainColor; 
-    overflow: hidden;
+    ///overflow: hidden;
 }
 
 body{
     padding: 0px;
     margin: 0px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    -webkit-perspective: 1px;
-    perspective:1px;
+    //overflow-y: auto;
+    //overflow-x: hidden;
+    //-webkit-overflow-scrolling: touch;
+    //-webkit-perspective: 1px;
+    //perspective:1px;
     height: 100vh;
 }
 
 .main-wrapper{
 
     padding: 0px;
+
+    h1{
+        padding: 10px;
+        width: 100%;
+        font-size: 5em;
+        opacity: .5;
+    }
 
     .video-bg{
         position: absolute;
@@ -79,7 +86,7 @@ body{
             left: 0px;
             width: 100%;
             height: 100vh;
-            background: url(../imgs/pattern.png);
+            background: url(../assets/pattern.png);
             background-repeat: repeat;
         }
     }
@@ -188,8 +195,6 @@ body{
             height: 35px;
             margin-left: -350px;
 
-            
-
             a{
                 cursor: pointer;
                 text-decoration: none;
@@ -220,7 +225,7 @@ body{
         height: 95px;
         margin-left: -125px;
         margin-top: -50px;
-        background: url('../imgs/logo.png') no-repeat;
+        background: url('../assets/logo.png') no-repeat;
         background-size: cover;
         -webkit-transform: translateZ(-1px) scale(2);
         transform: translateZ(-1px) scale(2);
@@ -238,6 +243,29 @@ body{
         visibility: hidden;
     }
 
+    section{
+        min-height: 100vh;
+        min-width: 100%;
+        padding: 0px;
+
+        .side-by-side-wrapper{
+            overflow: hidden;
+            height: 100vh;
+            width: 100%;
+
+            .side-image{
+                width: 100%;
+                height: 100%;
+                background: url($imageUrl) no-repeat;
+                background-size: cover;
+                background-position: center;
+                -webkit-transform: translateZ(-1px) scale(2);
+                transform: translateZ(-1px) scale(2);
+            }
+        }
+
+    }
+
     .about{
         margin-top: 100vh;
         -webkit-transform-style:preserve-3d;
@@ -248,88 +276,106 @@ body{
         overflow: hidden;
     }
 
-    section{
-        min-height: 100vh;
-        min-width: 100%;
-        padding: 0px;
+    /*CUSTOM*/
 
-        .side-by-side-wrapper{
-            overflow: hidden;
-            height: 100vh;
+    .projects-content{
+        .side-text{
+            padding: 20px;
+            font-size: 0.8em;
+            overflow: auto;
+            height: auto;
             width: 100%;
-            
-
-            .side-text{
-                padding: 50px;
-                font-size: 0.8em;
-                overflow: auto;
-                height: auto;
-                width: 100%;
-                text-align: center;
-            }
-
-            .side-logos{
-                display: flex;
-                width: 100%;
-                height: auto;
-                padding: 50px;
-                padding-top: 0px;
-                padding-bottom: 0px;
-                justify-content: center;
-                align-content: center;
-                list-style: none;
-
-                li{
-                    align-content: center;
-                    text-align: center;
-                    flex: 1;
-                    cursor: pointer;
-
-                    i{
-                        text-align: center;
-                        font-size: 2em;
-                        color:$blackColor;
-                    }
-                }
-            }
-
+            text-align: left;
         }
 
-        .side-image{
-            width: 100%;
-            height: 100%;
-            background: url($imageUrl) no-repeat;
-            background-size: cover;
-            background-position: center;
-            -webkit-transform: translateZ(-1px) scale(2);
-            transform: translateZ(-1px) scale(2);
-        }
-
-        .projects-list{
-            width: 100%;
-            height: 100vh;
+        .side-logos{
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            padding: 50px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            justify-content: center;
+            align-content: center;
             list-style: none;
 
-            .projects-element{
-                flex:30%;
-                height: 30%;
-                background: #ccc;
-                overflow: hidden;
+            li{
+                align-content: center;
+                text-align: center;
+                flex: 1;
                 cursor: pointer;
 
-                img{
-                    height: 110%;
-                }
-
-                &:hover{
-                    opacity: 0.2;
+                i{
+                    text-align: center;
+                    font-size: 2em;
+                    color:$blackColor;
                 }
             }
         }
+    }
+
+    .projects-list{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        list-style: none;
+
+        .projects-element{
+            flex:30%;
+            height: 30%;
+            background: #ccc;
+            overflow: hidden;
+            cursor: pointer;
+
+            img{
+                height: 110%;
+            }
+
+            &:hover{
+                opacity: 0.2;
+            }
+        }
+    }
+
+    .contacts{
+        
+        .contact-img{
+            width: 100%;
+            height: 100%;
+            background: url('https://static.pexels.com/photos/362/marketing-man-person-communication.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contacts-content{
+
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            form{
+                width: 100%;
+                padding: 20px;
+
+                input, textarea{
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 0.8em;
+                    border:1px solid $lightGrey;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+
+            }
+
+        }
+       
+
     }
 
 }
