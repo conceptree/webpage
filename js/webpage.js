@@ -5,6 +5,8 @@ function webpageJS() {
     var menuNavigation = menu.getElementsByTagName('nav')[0];
     var menuButton = document.getElementById('menuButton');
     var menuAnimations = document.getElementsByClassName('menu-animated');
+    var loginBtn = document.getElementById('loginBtn');
+    var loginWindow = document.getElementsByClassName('login-window')[0];
 
     /* Callbacks */
     function toggleMenu() {
@@ -12,9 +14,14 @@ function webpageJS() {
         menuButton.classList.toggle('open');
     }
 
+    function toggleLogin(){
+        loginWindow.classList.toggle('login-window-on');
+    }
+
     /* Init Callbacks */
     function initCallbacks(){
         menuButton.addEventListener('click', toggleMenu);
+        loginBtn.addEventListener('click', toggleLogin);
     }
 
     initCallbacks();

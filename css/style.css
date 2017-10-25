@@ -172,8 +172,6 @@ body {
     margin-top: -50px;
     background: url("../assets/logo.png") no-repeat;
     background-size: cover;
-    -webkit-transform: translateZ(-1px) scale(2);
-    transform: translateZ(-1px) scale(2);
     cursor: pointer; }
   .main-wrapper .window {
     position: absolute;
@@ -272,3 +270,31 @@ body {
         border: 1px solid #ccc;
         border-radius: 5px;
         margin-bottom: 10px; }
+  .main-wrapper .login-window {
+    position: absolute;
+    top: 35px;
+    left: calc(100vw);
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0; }
+    .main-wrapper .login-window input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #ccc;
+      font-size: 0.5em;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px; }
+    .main-wrapper .login-window label {
+      width: 100%;
+      color: #ccc;
+      font-size: 0.8em; }
+  .main-wrapper .login-window-on {
+    left: calc(100vw - 250px);
+    opacity: 1; }
