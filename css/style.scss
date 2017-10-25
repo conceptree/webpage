@@ -2,6 +2,7 @@ $blackColor : #000;
 $whiteColor : #fff;
 $lightGrey : #ccc;
 $bgMainColor : #F0F0EE;
+$materialBlue700: #1976D2;
 
 $imageUrl : "https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa8a2a.jpg";
 
@@ -381,29 +382,63 @@ body{
         top: 35px;
         left: calc(100vw);
         width: 250px;
-        height: 200px;
+        height: auto;
         padding: 10px;
         display: flex;
         justify-content: space-around;
         align-content: center;
         align-items: center;
+        flex-direction: column;
         background: rgba(0, 0, 0, 0.5);
         opacity: 0;
 
-        input{
-            border:1px solid #ccc;
-            border-radius: 5px;
-            color:$lightGrey;
-            font-size: 0.5em;
-            padding: 10px;
+        form{
+
             width: 100%;
-            margin-bottom: 10px;
+
+            input{
+                border:1px solid #ccc;
+                border-radius: 5px;
+                color:$blackColor;
+                font-size: 0.6em;
+                padding: 10px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            label{
+                width: 100%;
+                color:#ccc;
+                font-size: 0.8em;
+            }
+
+            button{
+                border-radius: 5px;
+                outline: none;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                width: 100%;
+                padding: 5px;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                background: $materialBlue700;
+                color:#fff;
+                font-size: 0.8em;
+                cursor: pointer;
+            }
+
         }
 
-        label{
+        .sign-in{
+            border-top:1px solid #fff;
+            padding: 10px;
             width: 100%;
-            color:#ccc;
-            font-size: 0.8em;
+            text-align: center;
+            font-size: 0.6em;
+            color:$materialBlue700;
+            cursor: pointer;
         }
     }
 

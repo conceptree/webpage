@@ -275,26 +275,52 @@ body {
     top: 35px;
     left: calc(100vw);
     width: 250px;
-    height: 200px;
+    height: auto;
     padding: 10px;
     display: flex;
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0; }
-    .main-wrapper .login-window input {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      color: #ccc;
-      font-size: 0.5em;
+    .main-wrapper .login-window form {
+      width: 100%; }
+      .main-wrapper .login-window form input {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #000;
+        font-size: 0.6em;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 10px; }
+      .main-wrapper .login-window form label {
+        width: 100%;
+        color: #ccc;
+        font-size: 0.8em; }
+      .main-wrapper .login-window form button {
+        border-radius: 5px;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        background: #1976D2;
+        color: #fff;
+        font-size: 0.8em;
+        cursor: pointer; }
+    .main-wrapper .login-window .sign-in {
+      border-top: 1px solid #fff;
       padding: 10px;
       width: 100%;
-      margin-bottom: 10px; }
-    .main-wrapper .login-window label {
-      width: 100%;
-      color: #ccc;
-      font-size: 0.8em; }
+      text-align: center;
+      font-size: 0.6em;
+      color: #1976D2;
+      cursor: pointer; }
   .main-wrapper .login-window-on {
     left: calc(100vw - 250px);
     opacity: 1; }
