@@ -3,6 +3,9 @@ $whiteColor : #fff;
 $lightGrey : #ccc;
 $bgMainColor : #F0F0EE;
 $materialBlue700: #1976D2;
+$darkYellow: #F9D764;
+$darkGrey: #1C1C1C;
+$darkerGrey:#121212;
 
 $imageUrl : "https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa8a2a.jpg";
 
@@ -28,35 +31,25 @@ $imageUrl : "https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4f
     transition: all 0.5s ease;  
 }
 
-html{
-    padding:0px;
-    margin: 0px;
+html, body{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    background-color: $bgMainColor; 
-    ///overflow: hidden;
-}
-
-body{
-    padding: 0px;
-    margin: 0px;
-    //overflow-y: auto;
-    //overflow-x: hidden;
-    //-webkit-overflow-scrolling: touch;
-    //-webkit-perspective: 1px;
-    //perspective:1px;
-    height: 100vh;
+    background-color: $darkGrey;
+    color: $whiteColor;
+    overflow-x: hidden;
 }
 
 .main-wrapper{
 
-    padding: 0px;
-
-    h1{
+    h1, h2{
         padding: 10px;
         width: 100%;
-        font-size: 5em;
+        font-size: 3em;
         opacity: .5;
+        color:$darkYellow;
+    }
+    h2{
+        font-size: 0.8em;
     }
 
     .video-bg{
@@ -101,8 +94,6 @@ body{
         background: rgba($color: $blackColor, $alpha: 0.5);
 
         i{
-            color:$whiteColor;
-
             a{
                 width: 100%;
                 height: 100%;
@@ -251,35 +242,31 @@ body{
             overflow: hidden;
             height: 100vh;
             width: 100%;
-
-            .side-image{
-                width: 100%;
-                height: 100%;
-                background: url($imageUrl) no-repeat;
-                background-size: cover;
-                background-position: center;
-                -webkit-transform: translateZ(-1px) scale(2);
-                transform: translateZ(-1px) scale(2);
-            }
         }
 
     }
 
     .about{
         margin-top: 100vh;
-        -webkit-transform-style:preserve-3d;
-        transform-style: preserve-3d;
-    }
 
-    .projects{
-        overflow: hidden;
+        .side-image{
+            width: 100%;
+            height: 100%;
+            background: url($imageUrl) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1{
+            width: 80%;
+        }
     }
 
     /*CUSTOM*/
+    .about-content{
 
-    .projects-content{
         .side-text{
-            padding: 20px;
+            padding: 10px;
             font-size: 0.8em;
             overflow: auto;
             height: auto;
@@ -307,34 +294,27 @@ body{
                 i{
                     text-align: center;
                     font-size: 2em;
-                    color:$blackColor;
                 }
             }
         }
     }
 
-    .projects-list{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        list-style: none;
+    .projects{
+        overflow: hidden;
 
-        .projects-element{
-            flex:30%;
-            height: 30%;
-            background: #ccc;
-            overflow: hidden;
-            cursor: pointer;
+        .row{
 
-            img{
-                height: 110%;
+            *{
+                padding: 0px;
             }
 
-            &:hover{
-                opacity: 0.2;
+            h1, h2, p{
+                padding: 20px;
+            }
+
+            img{
+                float: left;
+                width: 100%;
             }
         }
     }
