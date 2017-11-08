@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+    url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+    url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
 $blackColor: #000;
 $whiteColor: #fff;
 $lightGrey: #ccc;
@@ -45,12 +56,21 @@ $imageUrl: "https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
   border: none;
   text-decoration: none;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 .row {
@@ -71,6 +91,7 @@ html,
 body {
   background-color: $darkGrey;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1,
@@ -237,7 +258,7 @@ section {
 
     nav {
       width: 100%;
-      height: 35px;
+      height: 100%;
       margin-left: 100vw;
       opacity: 0;
 
@@ -248,6 +269,7 @@ section {
         padding-right: 10px;
         text-align: center;
         font-size: 0.8em;
+        line-height: 35px;
       }
     }
 
@@ -352,8 +374,37 @@ section {
         .pj-img-wrapper {
           text-align: center;
           overflow: hidden;
-          img {
-            width: 100%;
+          height: 100%;
+          width: 100%;
+          background: url("https://static.pexels.com/photos/373076/pexels-photo-373076.jpeg")
+            no-repeat;
+          background-size: cover;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          .pj-go-btn {
+            width: 150px;
+            height: 150px;
+            background: $darkGold;
+            &:before {
+              font-family: 'Material Icons';
+              content: ">";
+              font-size: 4em;
+              color: $whiteColor;
+            }
+          }
+        }
+
+        .pj-text-wrapper {
+          padding: 40px;
+          h1 {
+            width: 40%;
+            font-size: 3em;
+          }
+          p {
+            width: 50%;
+            margin-top: 30px;
           }
         }
       }
@@ -361,6 +412,7 @@ section {
   }
 
   .contacts {
+    padding: 20px;
     .contact-img {
       width: 100%;
       height: 100%;
@@ -373,13 +425,11 @@ section {
     .contacts-content {
       display: flex;
       justify-content: space-around;
-      align-content: center;
-      align-items: center;
       flex-direction: column;
 
       form {
         width: 100%;
-        padding: 20px;
+        margin-top: 20px;
 
         input,
         textarea {

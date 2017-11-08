@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype"); }
+
 @keyframes fromLeft {
   from {
     margin-left: -50%; }
@@ -28,12 +36,19 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
   border: none;
-  text-decoration: none; }
+  text-decoration: none;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
 
 .row {
   padding: 0;
@@ -49,7 +64,8 @@
 html,
 body {
   background-color: #1c1c1c;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow-y: auto; }
 
 h1,
 h2 {
@@ -183,7 +199,7 @@ section {
       float: right; }
     .main-wrapper .menu-nav nav {
       width: 100%;
-      height: 35px;
+      height: 100%;
       margin-left: 100vw;
       opacity: 0; }
       .main-wrapper .menu-nav nav a {
@@ -192,7 +208,8 @@ section {
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
-        font-size: 0.8em; }
+        font-size: 0.8em;
+        line-height: 35px; }
     .main-wrapper .menu-nav .menu-animated {
       margin-left: 0px;
       opacity: 1;
@@ -266,32 +283,54 @@ section {
     overflow: hidden; }
     .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper {
       text-align: center;
-      overflow: hidden; }
-      .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper img {
-        width: 100%; }
-  .main-wrapper .contacts .contact-img {
-    width: 100%;
-    height: 100%;
-    background: url("https://static.pexels.com/photos/362/marketing-man-person-communication.jpg") no-repeat;
-    background-size: cover;
-    background-position: center; }
-  .main-wrapper .contacts .contacts-content {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    flex-direction: column; }
-    .main-wrapper .contacts .contacts-content form {
+      overflow: hidden;
+      height: 100%;
       width: 100%;
-      padding: 20px; }
-      .main-wrapper .contacts .contacts-content form input,
-      .main-wrapper .contacts .contacts-content form textarea {
-        padding: 10px;
+      background: url("https://static.pexels.com/photos/373076/pexels-photo-373076.jpeg") no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end; }
+      .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper .pj-go-btn {
+        width: 150px;
+        height: 150px;
+        background: #887949; }
+        .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper .pj-go-btn:before {
+          font-family: 'Material Icons';
+          content: ">";
+          font-size: 4em;
+          color: #fff; }
+    .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper {
+      padding: 40px; }
+      .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper h1 {
+        width: 40%;
+        font-size: 3em; }
+      .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper p {
+        width: 50%;
+        margin-top: 30px; }
+  .main-wrapper .contacts {
+    padding: 20px; }
+    .main-wrapper .contacts .contact-img {
+      width: 100%;
+      height: 100%;
+      background: url("https://static.pexels.com/photos/362/marketing-man-person-communication.jpg") no-repeat;
+      background-size: cover;
+      background-position: center; }
+    .main-wrapper .contacts .contacts-content {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column; }
+      .main-wrapper .contacts .contacts-content form {
         width: 100%;
-        font-size: 0.8em;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px; }
+        margin-top: 20px; }
+        .main-wrapper .contacts .contacts-content form input,
+        .main-wrapper .contacts .contacts-content form textarea {
+          padding: 10px;
+          width: 100%;
+          font-size: 0.8em;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-bottom: 10px; }
   .main-wrapper .login-window {
     position: absolute;
     top: 35px;
