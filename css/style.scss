@@ -70,7 +70,15 @@ $imageUrl: "https://i.pinimg.com/originals/67/3e/55/673e55188d46f814ede3fedcf4fa
   -moz-osx-font-smoothing: grayscale;
 
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }
 
 .row {
@@ -97,7 +105,7 @@ body {
 h1,
 h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   color: $darkGold;
 }
 p,
@@ -107,6 +115,11 @@ strong {
   font-family: "Open Sans", sans-serif;
   color: $whiteColor;
   font-size: 1em;
+}
+
+a:hover,
+a:active {
+  color: $darkGold;
 }
 
 p {
@@ -153,6 +166,32 @@ section {
     .video-pattern {
       background: url(../assets/pattern.png);
       background-repeat: repeat;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 0px;
+      left: calc(50% - 65px);
+      width: 130px;
+      height: 100px;
+      -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 0% 0%;
+      background: rgba($lightGrey, 0.5);
+      cursor: pointer;
+      &:hover {
+        height: 130px;
+        border-radius: 1000px;
+        i {
+          font-size: 2em;
+          pointer-events: none;
+        }
+      }
+      i {
+        color: $whiteColor;
+        text-align: center;
+        line-height: 130px;
+        width: 100%;
+      }
     }
   }
 
@@ -202,10 +241,10 @@ section {
       -moz-transform: rotate(0deg);
       -o-transform: rotate(0deg);
       transform: rotate(0deg);
-      -webkit-transition: 0.25s ease-in-out;
-      -moz-transition: 0.25s ease-in-out;
-      -o-transition: 0.25s ease-in-out;
-      transition: 0.25s ease-in-out;
+      -webkit-transition: 0.55s ease-in-out;
+      -moz-transition: 0.55s ease-in-out;
+      -o-transition: 0.55s ease-in-out;
+      transition: 0.55s ease-in-out;
     }
 
     .menu-button span:nth-child(1) {
@@ -367,7 +406,7 @@ section {
     }
     .projects-wrapper {
       .project-item {
-        height: 50vh;
+        height: calc(50vh - 15px);
         cursor: pointer;
         overflow: hidden;
 
@@ -382,16 +421,25 @@ section {
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: rgba($darkGold, 0.5) 0px 2px 2px,
+              rgba($darkGold, 0.5) 0px 4px 4px, rgba($darkGold, 0.5) 0px 8px 8px,
+              rgba($darkGold, 0.5) 0px 16px 16px,
+              rgba($darkGold, 0.5) 0px 32px 32px,
+              rgba($darkGold, 0.5) 0px 64px 64px;
+          }
 
           .pj-go-btn {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             background: $darkGold;
-            &:before {
-              font-family: 'Material Icons';
-              content: ">";
-              font-size: 4em;
-              color: $whiteColor;
+            i {
+              font-size: 1.5em;
+              line-height: 100px;
+              width: 100%;
+              text-align: center;
             }
           }
         }
@@ -408,37 +456,95 @@ section {
           }
         }
       }
+
+      .project-item:nth-child(even) {
+        flex-flow: row-reverse;
+      }
+    }
+    .more-button {
+      width: 100%;
+      padding: 10px;
+      height: 100px;
+      text-align: center;
+      background: rgba($lightGrey, 0.1);
+      cursor: pointer;
+      i {
+        font-size: 1.5em;
+        color: $whiteColor;
+        line-height: 90px;
+      }
     }
   }
 
   .contacts {
     padding: 20px;
-    .contact-img {
-      width: 100%;
-      height: 100%;
-      background: url("https://static.pexels.com/photos/362/marketing-man-person-communication.jpg")
-        no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .contacts-content {
+    .contacts-form-wrapper {
       display: flex;
       justify-content: space-around;
-      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      padding: 100px;
+      .contacts-content {
+        flex: 1;
+        align-self: center;
 
-      form {
-        width: 100%;
-        margin-top: 20px;
+        * {
+          flex: 1;
+        }
 
-        input,
-        textarea {
-          padding: 10px;
-          width: 100%;
-          font-size: 0.8em;
-          border: 1px solid $lightGrey;
-          border-radius: 5px;
-          margin-bottom: 10px;
+        form {
+          margin-top: 20px;
+
+          input,
+          textarea {
+            padding: 10px;
+            width: 100%;
+            font-size: 0.8em;
+            border: 1px solid $lightGrey;
+            border-radius: 5px;
+            margin-bottom: 10px;
+          }
+          textarea {
+            min-height: 150px;
+            max-height: 250px;
+          }
+        }
+      }
+    }
+
+    .contact-links {
+      padding: 60px;
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
+
+      .contact-list {
+        flex: 1;
+
+        ul {
+          height: 250px;
+          overflow: hidden;
+          li {
+            padding: 10px;
+            list-style: none;
+            color: $whiteColor;
+
+            :nth-child(1) {
+              font-weight: bold;
+            }
+
+            i {
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              line-height: 30px;
+              padding-right: 60px;
+            }
+            a {
+              height: 30px;
+            }
+          }
         }
       }
     }

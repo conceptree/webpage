@@ -8,6 +8,7 @@ function webpageJS() {
   var loginBtn = document.getElementById("loginBtn");
   var loginWindow = document.getElementsByClassName("login-window")[0];
   var mainWrapper = document.getElementsByClassName("main-wrapper")[0];
+  var downButton = document.getElementById("downBtn");
   var menuBtnsList = [
     { id: "homeBtn", content: "Home" },
     { id: "aboutBtn", content: "Sobre" },
@@ -27,17 +28,29 @@ function webpageJS() {
   }
 
   function menuActions(event) {
-    menuBtnsList.forEach(function(el, idx){
-        var pageSections = document.getElementsByTagName('section');
-        if(event.target.id === el.id){
-            if(idx === 0){
-                window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-            }else{
-                idx--;
-                window.scroll({ top: pageSections[idx].offsetTop, left: 0, behavior: 'smooth' });
-            }
+    var pageSections = document.getElementsByTagName("section");
+    if (event.target.id === "downBtn") {
+      window.scroll({
+        top: pageSections[0].offsetTop - 35,
+        left: 0,
+        behavior: "smooth"
+      });
+    } else {
+      menuBtnsList.forEach(function(el, idx) {
+        if (event.target.id === el.id) {
+          if (idx === 0) {
+            window.scroll({ top: 0, left: 0, behavior: "smooth" });
+          } else {
+            idx--;
+            window.scroll({
+              top: pageSections[idx].offsetTop - 35,
+              left: 0,
+              behavior: "smooth"
+            });
+          }
         }
-    });
+      });
+    }
   }
 
   function toggleLogin() {
@@ -50,6 +63,7 @@ function webpageJS() {
     loginBtn.addEventListener("click", toggleLogin);
     window.addEventListener("scroll", readScroll);
     menuNavigation.addEventListener("click", menuActions);
+    downButton.addEventListener("click", menuActions);
   }
 
   function buildMenu() {

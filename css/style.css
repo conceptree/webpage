@@ -48,7 +48,20 @@
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga'; }
+  font-feature-settings: "liga";
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                supported by Chrome and Opera */ }
 
 .row {
   padding: 0;
@@ -70,7 +83,7 @@ body {
 h1,
 h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 2em;
+  font-size: 3em;
   color: #887949; }
 
 p,
@@ -80,6 +93,10 @@ strong {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   font-size: 1em; }
+
+a:hover,
+a:active {
+  color: #887949; }
 
 p {
   font-size: 0.8em; }
@@ -121,6 +138,31 @@ section {
     .main-wrapper .video-pattern .video-pattern {
       background: url(../assets/pattern.png);
       background-repeat: repeat; }
+    .main-wrapper .video-bg .scroll-indicator,
+    .main-wrapper .video-pattern .scroll-indicator {
+      position: absolute;
+      bottom: 0px;
+      left: calc(50% - 65px);
+      width: 130px;
+      height: 100px;
+      -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 0% 0%;
+      background: rgba(204, 204, 204, 0.5);
+      cursor: pointer; }
+      .main-wrapper .video-bg .scroll-indicator:hover,
+      .main-wrapper .video-pattern .scroll-indicator:hover {
+        height: 130px;
+        border-radius: 1000px; }
+        .main-wrapper .video-bg .scroll-indicator:hover i,
+        .main-wrapper .video-pattern .scroll-indicator:hover i {
+          font-size: 2em;
+          pointer-events: none; }
+      .main-wrapper .video-bg .scroll-indicator i,
+      .main-wrapper .video-pattern .scroll-indicator i {
+        color: #fff;
+        text-align: center;
+        line-height: 130px;
+        width: 100%; }
   .main-wrapper .menu-nav {
     position: fixed;
     top: 0px;
@@ -161,10 +203,10 @@ section {
       -moz-transform: rotate(0deg);
       -o-transform: rotate(0deg);
       transform: rotate(0deg);
-      -webkit-transition: 0.25s ease-in-out;
-      -moz-transition: 0.25s ease-in-out;
-      -o-transition: 0.25s ease-in-out;
-      transition: 0.25s ease-in-out; }
+      -webkit-transition: 0.55s ease-in-out;
+      -moz-transition: 0.55s ease-in-out;
+      -o-transition: 0.55s ease-in-out;
+      transition: 0.55s ease-in-out; }
     .main-wrapper .menu-nav .menu-button span:nth-child(1) {
       top: 5px; }
     .main-wrapper .menu-nav .menu-button span:nth-child(2) {
@@ -278,7 +320,7 @@ section {
   .main-wrapper .projects > h1 {
     padding: 40px 0 40px 20px; }
   .main-wrapper .projects .projects-wrapper .project-item {
-    height: 50vh;
+    height: calc(50vh - 15px);
     cursor: pointer;
     overflow: hidden; }
     .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper {
@@ -290,16 +332,19 @@ section {
       background-size: cover;
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end; }
+      align-items: flex-end;
+      cursor: pointer; }
+      .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper:hover {
+        box-shadow: rgba(136, 121, 73, 0.5) 0px 2px 2px, rgba(136, 121, 73, 0.5) 0px 4px 4px, rgba(136, 121, 73, 0.5) 0px 8px 8px, rgba(136, 121, 73, 0.5) 0px 16px 16px, rgba(136, 121, 73, 0.5) 0px 32px 32px, rgba(136, 121, 73, 0.5) 0px 64px 64px; }
       .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper .pj-go-btn {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         background: #887949; }
-        .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper .pj-go-btn:before {
-          font-family: 'Material Icons';
-          content: ">";
-          font-size: 4em;
-          color: #fff; }
+        .main-wrapper .projects .projects-wrapper .project-item .pj-img-wrapper .pj-go-btn i {
+          font-size: 1.5em;
+          line-height: 100px;
+          width: 100%;
+          text-align: center; }
     .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper {
       padding: 40px; }
       .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper h1 {
@@ -308,29 +353,70 @@ section {
       .main-wrapper .projects .projects-wrapper .project-item .pj-text-wrapper p {
         width: 50%;
         margin-top: 30px; }
+  .main-wrapper .projects .projects-wrapper .project-item:nth-child(even) {
+    flex-flow: row-reverse; }
+  .main-wrapper .projects .more-button {
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    cursor: pointer; }
+    .main-wrapper .projects .more-button i {
+      font-size: 1.5em;
+      color: #fff;
+      line-height: 90px; }
   .main-wrapper .contacts {
     padding: 20px; }
-    .main-wrapper .contacts .contact-img {
-      width: 100%;
-      height: 100%;
-      background: url("https://static.pexels.com/photos/362/marketing-man-person-communication.jpg") no-repeat;
-      background-size: cover;
-      background-position: center; }
-    .main-wrapper .contacts .contacts-content {
+    .main-wrapper .contacts .contacts-form-wrapper {
       display: flex;
       justify-content: space-around;
-      flex-direction: column; }
-      .main-wrapper .contacts .contacts-content form {
-        width: 100%;
-        margin-top: 20px; }
-        .main-wrapper .contacts .contacts-content form input,
-        .main-wrapper .contacts .contacts-content form textarea {
-          padding: 10px;
-          width: 100%;
-          font-size: 0.8em;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          margin-bottom: 10px; }
+      align-content: center;
+      align-items: center;
+      padding: 100px; }
+      .main-wrapper .contacts .contacts-form-wrapper .contacts-content {
+        flex: 1;
+        align-self: center; }
+        .main-wrapper .contacts .contacts-form-wrapper .contacts-content * {
+          flex: 1; }
+        .main-wrapper .contacts .contacts-form-wrapper .contacts-content form {
+          margin-top: 20px; }
+          .main-wrapper .contacts .contacts-form-wrapper .contacts-content form input,
+          .main-wrapper .contacts .contacts-form-wrapper .contacts-content form textarea {
+            padding: 10px;
+            width: 100%;
+            font-size: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px; }
+          .main-wrapper .contacts .contacts-form-wrapper .contacts-content form textarea {
+            min-height: 150px;
+            max-height: 250px; }
+    .main-wrapper .contacts .contact-links {
+      padding: 60px;
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center; }
+      .main-wrapper .contacts .contact-links .contact-list {
+        flex: 1; }
+        .main-wrapper .contacts .contact-links .contact-list ul {
+          height: 250px;
+          overflow: hidden; }
+          .main-wrapper .contacts .contact-links .contact-list ul li {
+            padding: 10px;
+            list-style: none;
+            color: #fff; }
+            .main-wrapper .contacts .contact-links .contact-list ul li :nth-child(1) {
+              font-weight: bold; }
+            .main-wrapper .contacts .contact-links .contact-list ul li i {
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              line-height: 30px;
+              padding-right: 60px; }
+            .main-wrapper .contacts .contact-links .contact-list ul li a {
+              height: 30px; }
   .main-wrapper .login-window {
     position: absolute;
     top: 35px;
