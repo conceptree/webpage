@@ -32,6 +32,55 @@ router.get('/users', (req, res)=>{
         .then((users)=>{
             response.data = users;
             res.json(response);
+            console.log(res);
+        })
+        .catch((err)=>{
+            sendError(err, res);
+        })
+    });
+});
+
+router.post('/users', (req, res)=>{
+    connection((db)=>{
+        db.collection('users')
+        .find()
+        .toArray()
+        .then((users)=>{
+            response.data = users;
+            res.json(response);
+            console.log(res);
+        })
+        .catch((err)=>{
+            sendError(err, res);
+        })
+    });
+});
+
+router.put('/users/:id', (req, res)=>{
+    connection((db)=>{
+        db.collection('users')
+        .find()
+        .toArray()
+        .then((users)=>{
+            response.data = users;
+            res.json(response);
+            console.log(res);
+        })
+        .catch((err)=>{
+            sendError(err, res);
+        })
+    });
+});
+
+router.delete('/users/:id', (req, res)=>{
+    connection((db)=>{
+        db.collection('users')
+        .find()
+        .toArray()
+        .then((users)=>{
+            response.data = users;
+            res.json(response);
+            console.log(res);
         })
         .catch((err)=>{
             sendError(err, res);

@@ -260,7 +260,7 @@ section {
       -o-transition: all 1s ease;
       -ms-transition: all 1s ease;
       transition: all 1s ease; }
-  .main-wrapper .logo {
+  .main-wrapper .logo-style {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -434,7 +434,7 @@ section {
           .main-wrapper .contacts .contact-links .contact-list ul li a {
             height: 30px; }
   .main-wrapper .login-window {
-    position: absolute;
+    position: fixed;
     top: 35px;
     left: calc(100vw);
     width: 250px;
@@ -457,10 +457,16 @@ section {
         padding: 10px;
         width: 100%;
         margin-bottom: 10px; }
-      .main-wrapper .login-window form label {
+      .main-wrapper .login-window form label, .main-wrapper .login-window form a {
         width: 100%;
         color: #ccc;
         font-size: 0.8em; }
+      .main-wrapper .login-window form a {
+        font-size: 0.6em;
+        color: #1976d2;
+        cursor: pointer; }
+        .main-wrapper .login-window form a:hover {
+          color: #fff; }
       .main-wrapper .login-window form button {
         border-radius: 5px;
         width: 100%;
@@ -480,6 +486,8 @@ section {
       font-size: 0.6em;
       color: #1976d2;
       cursor: pointer; }
+      .main-wrapper .login-window .sign-in:hover {
+        color: #fff; }
   .main-wrapper .login-window-on {
     left: calc(100vw - 250px);
     opacity: 1; }

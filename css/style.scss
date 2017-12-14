@@ -323,7 +323,7 @@ section {
     }
   }
 
-  .logo {
+  .logo-style {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -569,7 +569,7 @@ section {
   }
 
   .login-window {
-    position: absolute;
+    position: fixed;
     top: 35px;
     left: calc(100vw);
     width: 250px;
@@ -596,10 +596,20 @@ section {
         margin-bottom: 10px;
       }
 
-      label {
+      label, a {
         width: 100%;
         color: #ccc;
         font-size: 0.8em;
+      }
+
+      a{
+        font-size: 0.6em;
+        color: $materialBlue700;
+        cursor: pointer;
+
+        &:hover{
+          color:$whiteColor;
+        }
       }
 
       button {
@@ -624,6 +634,9 @@ section {
       font-size: 0.6em;
       color: $materialBlue700;
       cursor: pointer;
+      &:hover{
+        color:$whiteColor
+      }
     }
   }
 

@@ -1,4 +1,3 @@
-"use strict";
 function webpageJS() {
   var self = this;
   var menu = document.getElementsByClassName("menu-nav")[0];
@@ -9,6 +8,8 @@ function webpageJS() {
   var loginWindow = document.getElementsByClassName("login-window")[0];
   var mainWrapper = document.getElementsByClassName("main-wrapper")[0];
   var downButton = document.getElementById("downBtn");
+  var logo = document.getElementById("logo");
+
   var menuBtnsList = [
     { id: "homeBtn", content: "Home" },
     { id: "aboutBtn", content: "Sobre" },
